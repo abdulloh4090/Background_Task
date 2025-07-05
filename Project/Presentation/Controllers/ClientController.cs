@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project.Models;
-using Project.Servcies;
+using Project.Persistance.SQLServer.Repasitories;
 
-namespace Project.Controllers
+namespace Project.PresentationLayer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -17,6 +17,10 @@ namespace Project.Controllers
             _databaseService = databaseService;
             _logger = logger;
         }
+
+        #region Methods region
+
+        #region Public methods region
 
         /// <summary>
         /// Queue orqali kelgan Client malumotini qabul qiladi
@@ -45,6 +49,9 @@ namespace Project.Controllers
             return Ok(result);
         }
 
+        #endregion
+
+        #endregion
 
     }
 }

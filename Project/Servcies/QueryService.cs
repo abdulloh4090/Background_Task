@@ -1,6 +1,7 @@
 ﻿
 
 using Project.Models;
+using Project.Persistance.SQLServer.Repasitories;
 
 namespace Project.Servcies
 {
@@ -16,6 +17,10 @@ namespace Project.Servcies
             _databaseService = databaseService;
             _queue = queue;
         }
+
+        #region Methods region
+
+        #region Public methods region
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
@@ -32,5 +37,9 @@ namespace Project.Servcies
                 await Task.Delay(TimeSpan.FromSeconds(10), stoppingToken);
             }
         }
+
+        #endregion 
+
+        #endregion 
     }
 }

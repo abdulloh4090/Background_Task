@@ -2,7 +2,7 @@
 using Microsoft.Data.SqlClient;
 using Project.Models;
 
-namespace Project.Servcies
+namespace Project.Persistance.SQLServer.Repasitories
 {
     public class DatabaseService
     {
@@ -13,7 +13,9 @@ namespace Project.Servcies
             _connectionString = configuration.GetConnectionString("DefaultConnection")!;
         }
 
+        #region Methods region
 
+        #region Public methods region
         public async Task<List<ClientData>> GetAllClientsAsync()
         {
             var result = new List<ClientData>();
@@ -37,7 +39,9 @@ namespace Project.Servcies
 
             return result;
         }
+        #endregion
 
+        #endregion
 
     }
 }

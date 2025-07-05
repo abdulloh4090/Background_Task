@@ -1,6 +1,7 @@
 ﻿using Project.Models;
 using Project.Servcies;
 using Microsoft.OpenApi.Models;
+using Project.Persistance.SQLServer.Repasitories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,37 +46,3 @@ app.MapControllers();
 
 app.Run();
 
-
-
-//using Project.Models;
-//using Project.Servcies;
-
-//var builder = WebApplication.CreateBuilder(args);
-
-
-//builder.Services.AddControllers();
-
-//builder.Services.AddOpenApi();
-
-
-//builder.Services.AddSingleton(typeof(QueueService<ClientData>));
-//builder.Services.AddSingleton<DatabaseService>();
-//builder.Services.AddHostedService<QueryService>();
-//builder.Services.AddHostedService<ProcessService>();
-//builder.Services.AddHttpClient();
-
-//var app = builder.Build();
-
-
-//if (app.Environment.IsDevelopment())
-//{
-//    app.MapOpenApi();
-//}
-
-//app.UseHttpsRedirection();
-
-//app.UseAuthorization();
-
-//app.MapControllers();
-
-//app.Run();

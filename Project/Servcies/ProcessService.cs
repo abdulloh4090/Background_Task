@@ -17,6 +17,9 @@ namespace Project.Servcies
             _httpClientFactory = httpClientFactory;
         }
 
+        #region Methods region
+
+        #region Public methods region
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var client = _httpClientFactory.CreateClient();
@@ -38,5 +41,9 @@ namespace Project.Servcies
                 }
             }
         }
+
+        #endregion
+
+        #endregion
     }
 }
