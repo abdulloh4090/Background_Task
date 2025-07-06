@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Project.Models;
 using Project.Persistance.SQLServer.Repasitories;
 
-namespace Project.PresentationLayer.Controllers
+namespace Project.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

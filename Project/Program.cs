@@ -2,6 +2,7 @@
 using Project.Servcies;
 using Microsoft.OpenApi.Models;
 using Project.Persistance.SQLServer.Repasitories;
+using Project.Servcies.Workers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +23,7 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddSingleton(typeof(QueueService<ClientData>));
 builder.Services.AddSingleton<DatabaseService>();
 builder.Services.AddHostedService<QueryService>();
-builder.Services.AddHostedService<ProcessService>();
+builder.Services.AddHostedService<ClientDataProcessor>();
 builder.Services.AddHttpClient();
 
 var app = builder.Build();

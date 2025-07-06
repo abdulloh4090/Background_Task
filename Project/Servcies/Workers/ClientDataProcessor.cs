@@ -4,13 +4,13 @@ using Project.Models;
 
 namespace Project.Servcies
 {
-    public class ProcessService : BackgroundService
+    public class ClientDataProcessor : BackgroundService
     {
         private readonly QueueService<ClientData> _queueService;
-        private readonly ILogger<ProcessService> _logger;
+        private readonly ILogger<ClientDataProcessor> _logger;
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public ProcessService(QueueService<ClientData> queueService, ILogger<ProcessService> logger, IHttpClientFactory httpClientFactory)
+        public ClientDataProcessor(QueueService<ClientData> queueService, ILogger<ClientDataProcessor> logger, IHttpClientFactory httpClientFactory)
         {
             _queueService = queueService;
             _logger = logger;
